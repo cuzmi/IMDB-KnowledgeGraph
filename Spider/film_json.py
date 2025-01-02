@@ -211,15 +211,14 @@ class Film2Json():
 
 
 if __name__ == '__main__':
-    # film_url = GenreFilmURL()
-    # film_urls = film_url.getfilmurl()
-    #
-    #
-    # with open("../dict/film_url.json", "w") as json_file:
-    #     json.dump(film_urls, json_file, indent=4)
+    film_url = GenreFilmURL()
+    film_urls = film_url.getfilmurl()
 
-    with open('../dict/film_url.json', 'r') as file: # test
-        film_urls = json.load(file)
+    with open("../dict/film_url.json", "w") as json_file:
+        json.dump(film_urls, json_file, indent=4)
+
+    # with open('../dict/film_url.json', 'r') as file: # test
+    #     film_urls = json.load(file)
 
     start_time = time.time()
     with open('../dict/film_infos.json', 'a') as json_file:
