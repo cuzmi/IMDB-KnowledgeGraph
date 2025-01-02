@@ -228,7 +228,7 @@ if __name__ == '__main__':
         if json_file.tell() == 0:
             json_file.write('[\n')  # 如果文件为空，写入开始的 '['
 
-        for idx, (film, url) in tqdm.tqdm(enumerate(list(film_urls.items())[3050:], start=2500), desc='In progress of retrieving data:'): # 从a+b开始
+        for idx, (film, url) in tqdm.tqdm(enumerate(list(film_urls.items())[:], start=0), desc='In progress of retrieving data:'): # 从a+b开始
             try:
                 f2j = Film2Json(url)
                 movie_data = f2j.getinfo()
